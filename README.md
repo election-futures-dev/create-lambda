@@ -20,10 +20,12 @@ aws configure
 ## Steps to Create Lambda
 - [ ] Create Role
 ```bash
-# Read the allow-role-policy.json. This can be customized.
+# Declare role-name
+role_name="lambda-allow-basic"    
+# Read the ./allow-role-policy.json.
 policy=$(cat ./allow-role-policy.json | jq)
-# Create the AWS-IAM role with the name lambda-ex and the above read-in policy. Name and Policy can be customized.
-aws iam create-role --role-name lambda-ex --assume-role-policy-document $policy  
+# Create the AWS-IAM role with the name lambda-ex and the above read-in policy. role-name and policy can be customized.
+aws iam create-role --role-name $(echo "$role_name") --assume-role-policy-document $policy  
 ```
 
 <!-- Below is the referred links. Not appearing in the rendered-markdown-->

@@ -28,6 +28,20 @@ policy=$(cat ./allow-role-policy.json | jq)
 aws iam create-role --role-name $(echo "$role_name") --assume-role-policy-document $policy  
 ```
 
+- [ ] Zip the `index.js`
+```bash
+zip index.zip index.js
+```
+
+- [ ] Create `lambda`
+```bash
+# Declare function-name & runtime
+func_name="this-is-test-lambda"
+runtime="nodejs12.x"
+# Creae lambda with the func_name. --role ARN must be changed with the one created from the first step.  
+aws lambda create-function --function-name $(echo "$func_name") --zip-file fileb://index.zip --handler index.handler --runtime $(echo "$runtime") --role arn:aws:iam::221262875767:role/lambda-allow-basic
+```
+
 <!-- Below is the referred links. Not appearing in the rendered-markdown-->
 [jq]: https://formulae.brew.sh/formula/jq
 

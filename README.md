@@ -13,7 +13,7 @@ $ sudo installer -pkg AWSCLIV2.pkg -target /
 aws configure
 ``` 
 
-<!-- Below is the links. Not appearing in the Markdown.-->
+<!-- Below is the referred links. Not appearing in the rendered-markdown-->
 [Install AWS CLI v.2]: https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-mac.html
 
 [Configure your AWS credentials]: https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html
